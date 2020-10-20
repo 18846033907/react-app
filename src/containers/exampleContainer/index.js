@@ -7,30 +7,30 @@ class Example extends Component {
   constructor(props) {
     super();
   }
+
   componentDidMount() {
     const { actions } = this.props;
     actions.getExample();
   }
+
   addExample = () => {};
-  updateExample = () => {};
+
   render() {
     const { example } = this.props;
-    const {payload}=example
-    if(example.status&&example.status==='SUCCESS'){
-        return (
-            <>
-              <button onClick={this.addExample}>增加示例</button>
-              <button onClick={this.updateExample}>更新示例</button>
-              <ul>
-                {payload.data.map((item) => {
-                  return <li key={item.id}>{item.name}</li>;
-                })}
-              </ul>
-            </>
-          );
+    const { payload } = example;
+    if (example.status && example.status === "SUCCESS") {
+      return (
+        <>
+          <button onClick={this.addExample}>增加示例</button>
+          <ul>
+            {payload.data.map((item) => {
+              return <li key={item.id}>{item.name}</li>;
+            })}
+          </ul>
+        </>
+      );
     }
-    return 'loading'
-
+    return "loading";
   }
 }
 
