@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 import * as exampleActions from "actions/example-actions";
 
 class Example extends Component {
-  constructor(props) {
-    super();
-  }
 
   componentDidMount() {
     const { actions } = this.props;
@@ -21,7 +19,9 @@ class Example extends Component {
     if (example.status && example.status === "SUCCESS") {
       return (
         <>
-          <button onClick={this.addExample}>增加示例</button>
+          <button type="submit" onClick={this.addExample}>
+            增加示例
+          </button>
           <ul>
             {payload.data.map((item) => {
               return <li key={item.id}>{item.name}</li>;
@@ -45,5 +45,9 @@ function mapDispatchToProps(dispatch) {
     actions: bindActionCreators({ ...exampleActions }, dispatch),
   };
 }
+
+Example.propTypes = {
+  example: PropTypes.object.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Example);

@@ -1,16 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 兼容 ie11
 
-## Available Scripts
+在 index.html 添加 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+yarn add core-js
+在 pakage.json 添加
 
-In the project directory, you can run:
+```
+ "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "ie > 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie > 11"
+    ]
+  }
+```
 
-### `yarn start`
+### 配置引入路径
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+yarn add customize-cra
+在 config-overrides.js 添加
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
+const { override, addWebpackAlias} = require('customize-cra');
+const path = require('path')
+
+ module.exports = override(
+   addWebpackAlias({
+     actions: path.resolve(__dirname, 'src/actions/'),
+     reducers: path.resolve(__dirname, 'src/reducers/'),
+     components:path.resolve(__dirname, 'src/components/'),
+     containers:path.resolve(__dirname, 'src/containers/'),
+     store:path.resolve(__dirname, 'src/store/')
+   })
+);
+```
 
 ### `yarn test`
 

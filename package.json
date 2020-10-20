@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "cra-template": "1.0.3",
     "customize-cra": "^1.0.0",
@@ -30,13 +31,13 @@
       ">0.2%",
       "not dead",
       "not op_mini all",
-      "ie > 9"
+      "ie > 11"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version",
-      "ie > 9"
+      "ie > 11"
     ]
   },
   "husky": {
@@ -50,15 +51,22 @@
       "git add"
     ],
     "*.{js}": [
-      "prettier  --write --single-quote ",
+      "prettier  --write --single-quote",
       "eslint --fix",
       "stylelint",
       "git add"
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.5",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "prop-types": "^15.7.2"
   }
 }
