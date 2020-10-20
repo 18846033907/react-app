@@ -1,6 +1,8 @@
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
+import "core-js";
 import React from "react";
 import ReactDOM from "react-dom";
-import "core-js/es";
 import { Provider } from "react-redux";
 import store from "store/store.js";
 import "./index.css";
