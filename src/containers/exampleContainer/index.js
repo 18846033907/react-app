@@ -1,11 +1,10 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { bindActionCreators } from "redux";
-import * as exampleActions from "actions/example-actions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import * as exampleActions from 'actions/example-actions';
 
 class Example extends Component {
-
   componentDidMount() {
     const { actions } = this.props;
     actions.getExample();
@@ -16,7 +15,7 @@ class Example extends Component {
   render() {
     const { example } = this.props;
     const { payload } = example;
-    if (example.status && example.status === "SUCCESS") {
+    if (example.status && example.status === 'SUCCESS') {
       return (
         <>
           <button type="submit" onClick={this.addExample}>
@@ -30,7 +29,7 @@ class Example extends Component {
         </>
       );
     }
-    return "loading";
+    return 'loading';
   }
 }
 
@@ -47,7 +46,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 Example.propTypes = {
-  example: PropTypes.object.isRequired,
+  example: PropTypes.shape.isRequired,
+  actions: PropTypes.shape.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Example);

@@ -7,6 +7,7 @@
     "core-js": "^3.6.5",
     "cra-template": "1.0.3",
     "customize-cra": "^1.0.0",
+    "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-app-polyfill": "^1.0.6",
     "react-app-rewired": "^2.1.6",
@@ -63,9 +64,9 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
-    "prettier": "^2.1.2",
-    "prop-types": "^15.7.2"
+    "prettier": "^2.1.2"
   }
 }

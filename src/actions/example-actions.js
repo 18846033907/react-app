@@ -1,12 +1,12 @@
+import axios from 'axios';
 import {
   ADD_EXAMPLE_SUCCESS,
   ADD_EXAMPLE_PENDING,
   ADD_EXAMPLE_FAILED,
   GET_EXAMPLE_SUCCESS,
   GET_EXAMPLE_PENDING,
-  GET_EXAMPLE_FAILED
-} from "./action-types.js";
-import axios from "axios";
+  GET_EXAMPLE_FAILED,
+} from './action-types';
 
 export const addExampleSuccess = (res) => {
   return { type: ADD_EXAMPLE_SUCCESS, payload: res };
@@ -31,7 +31,7 @@ export const getExampleFailed = (error) => {
 export const getExample = () => {
   return (dispatch) => {
     return axios
-      .get("http://localhost:8090/json.action")
+      .get('http://localhost:8090/json.action')
       .then((res) => {
         dispatch(getExampleSuccess(res.data));
       })
