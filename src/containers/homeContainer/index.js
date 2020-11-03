@@ -1,12 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Button, Checkbox } from 'antd';
 
 const Home = () => {
   return (
     <>
-      <Link to="/example">Example</Link>
+      <Button type="primary" disabled>
+        sdsadasd
+      </Button>
+      <Button type="primary">MATERIAL</Button>
+      <Checkbox />
     </>
   );
 };
 
+Home.propTypes = {};
 export default Home;

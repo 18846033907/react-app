@@ -1,4 +1,8 @@
-import { GET_EXAMPLE_SUCCESS, GET_EXAMPLE_PENDING, GET_EXAMPLE_FAILED } from 'actions/action-types';
+import {
+  GET_EXAMPLE_SUCCESS,
+  GET_EXAMPLE_PENDING,
+  GET_EXAMPLE_FAILED,
+} from '@actions/action-types';
 
 const initialState = {};
 export default (state = initialState, action) => {

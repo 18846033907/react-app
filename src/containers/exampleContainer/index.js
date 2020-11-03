@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
-import * as exampleActions from 'actions/example-actions';
+import * as exampleActions from '@actions/example-actions';
 
 class Example extends Component {
   componentDidMount() {

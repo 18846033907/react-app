@@ -1,3 +1,7 @@
+## 技术栈
+
+redux+react-router-dom+less+antd
+
 ## 问题
 
 ### 兼容 ie11
